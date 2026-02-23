@@ -1,12 +1,26 @@
 import { ApolloServer } from '@apollo/server';
 import { startStandaloneServer } from '@apollo/server/standalone';
+import _db from './_db.js'
+import { typeDefs } from './schema.js';
 
-import { typeDefs } from './schema';
+const resolvers = {
+    Query: {
+        games() {
+            return _db.games
+        },
+        reviews(){
+            return _db.reviews
+        },
+        authors(){
+            return _db.authors
+        }
+    }
+}
 
 //setting up server
 const server = new ApolloServer({
     typeDefs,
-    //resolvers
+    resolvers
 
 })
 
