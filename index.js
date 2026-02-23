@@ -13,7 +13,17 @@ const resolvers = {
         },
         authors(){
             return _db.authors
-        }
+        },
+
+        singleReview(_, args){ //(parent, args, context)
+            return _db.reviews.find((review) => review.id === args.id)
+        },
+        singleGame(_, args){ //(parent, args, context)
+            return _db.games.find((game) => game.id === args.id)
+        },
+        singleAuthor(_, args){ //(parent, args, context)
+            return _db.authors.find((author) => author.id === args.id)
+        },
     }
 }
 
