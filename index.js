@@ -5,6 +5,7 @@ import { typeDefs } from './schema.js';
 
 const resolvers = {
     Query: {
+        //FETCH ALL
         games() {
             return _db.games
         },
@@ -14,7 +15,8 @@ const resolvers = {
         authors(){
             return _db.authors
         },
-
+        
+        //FETCH SINGLE
         singleReview(_, args){ //(parent, args, context)
             return _db.reviews.find((review) => review.id === args.id)
         },
@@ -24,6 +26,26 @@ const resolvers = {
         singleAuthor(_, args){ //(parent, args, context)
             return _db.authors.find((author) => author.id === args.id)
         },
+    },
+
+    //NESTED
+    Game:{
+        reviews(parent){
+            return _db.reviews.filter((r) => r.game_id === parent.id)
+        }
+    },
+    Author:{
+        reviews(parent){
+            return _db.reviews.filter((r) => r.author_id === parent.id)
+        }
+    },
+    Review:{
+        game(parent){
+            return _db.games.find((g) => g.id === parent.game_id)
+        },
+        author(parent){
+            return _db.authors.find((a) => a.id === parent.author_id)
+        }
     }
 }
 

@@ -1,28 +1,25 @@
 let games = [
-  { id: "1", title: "The Legend of Code", platform: ["PC", "Switch"] },
-  { id: "2", title: "React Racer", platform: ["PC", "PlayStation"] },
-  { id: "3", title: "GraphQL Galaxy", platform: ["Xbox", "PC"] },
-  { id: "4", title: "Node Ninjas", platform: ["Mobile", "PC"] },
-  { id: "5", title: "TypeScript Tycoon", platform: ["PC"] },
-  { id: "6", title: "Mongo Madness", platform: ["PC", "Xbox"] }
-];
-
-let reviews = [
-  { id: "1", rating: 5, content: "Absolutely amazing gameplay!" },
-  { id: "2", rating: 4, content: "Really fun but could use more levels." },
-  { id: "3", rating: 3, content: "Average experience overall." },
-  { id: "4", rating: 5, content: "Best game I've played this year!" },
-  { id: "5", rating: 2, content: "Not great, had several bugs." },
-  { id: "6", rating: 4, content: "Solid mechanics and nice graphics." }
-];
+  {id: '1', title: 'Zelda, Tears of the Kingdom', platform: ['Switch']},
+  {id: '2', title: 'Final Fantasy 7 Remake', platform: ['PS5', 'Xbox']},
+  {id: '3', title: 'Elden Ring', platform: ['PS5', 'Xbox', 'PC']},
+  {id: '4', title: 'Mario Kart', platform: ['Switch']},
+  {id: '5', title: 'Pokemon Scarlet', platform: ['PS5', 'Xbox', 'PC']},
+]
 
 let authors = [
-  { id: "1", name: "Alice Johnson", verified: true },
-  { id: "2", name: "Brian Smith", verified: false },
-  { id: "3", name: "Carla Gomez", verified: true },
-  { id: "4", name: "David Lee", verified: false },
-  { id: "5", name: "Elena Petrova", verified: true },
-  { id: "6", name: "Fatima Khan", verified: false }
-];
+  {id: '1', name: 'mario', verified: true},
+  {id: '2', name: 'yoshi', verified: false},
+  {id: '3', name: 'peach', verified: true},
+]
 
-export default {games, authors, reviews }
+let reviews = [
+  {id: '1', rating: 9, content: 'lorem ipsum', author_id: '1', game_id: '2'},
+  {id: '2', rating: 10, content: 'lorem ipsum', author_id: '2', game_id: '1'},
+  {id: '3', rating: 7, content: 'lorem ipsum', author_id: '3', game_id: '3'},
+  {id: '4', rating: 5, content: 'lorem ipsum', author_id: '2', game_id: '4'},
+  {id: '5', rating: 8, content: 'lorem ipsum', author_id: '2', game_id: '5'},
+  {id: '6', rating: 7, content: 'lorem ipsum', author_id: '1', game_id: '2'},
+  {id: '7', rating: 10, content: 'lorem ipsum', author_id: '3', game_id: '1'},
+]
+
+export default { games, authors, reviews }
